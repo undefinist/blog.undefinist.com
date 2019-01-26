@@ -18,9 +18,11 @@ html {
 }
 
 body {
-	background: $white;
-  font: 18px/1.4 $helvetica;
+	background: #f3f3f3;
+  font: 1.5rem $bodyFont;
   color: $darkGray;
+  line-height: 1.4;
+  font-variant-numeric: oldstyle-nums;
 }
 
 .container {
@@ -31,9 +33,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
-  color: $darkerGray;
-  font-weight: bold;
+  font-family: $headerFont;
+  color: $accent1;
+  font-weight: 900;
 
   line-height: 1.7;
   margin: 1em 0 15px;
@@ -48,6 +50,10 @@ h1 {
   font-size: 30px;
   a {
     color: inherit;
+    transition: color 0.25s ease-out;
+    &:hover, &:active {
+      color: $accent2;
+    }
   }
 }
 
@@ -64,16 +70,21 @@ h4 {
   color: $gray;
 }
 
-p {
-  margin: 15px 0;
+a {
+  color: $accent2;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-a {
-  color: $blue;
-  text-decoration: none;
-	cursor: pointer;
-  &:hover, &:active {
-    color: $blue;
+p {
+  margin: 15px 0;
+  a {
+    text-decoration: underline;
+    transition: transform 0.25s ease-out;
+    display: inline-block;
+    &:hover, &:active {
+      transform: translate(0, -0.5rem);
+    }
   }
 }
 
@@ -122,11 +133,11 @@ img {
 
 // Specify the color of the selection
 ::-moz-selection {
-  color: $black;
+  color: $accent1;
   background: $lightGray;
 }
 ::selection {
-  color: $black;
+  color: $accent1;
   background: $lightGray;
 }
 
@@ -194,7 +205,7 @@ img {
   margin: 0;
   color: $darkGray;
   cursor: pointer;
-  font-family: $helveticaNeue;
+  font-family: $headerFont;
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
@@ -213,7 +224,7 @@ img {
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $helveticaNeue;
+  font-family: $headerFont;
   font-size: 18px;
 
   @include mobile {
@@ -268,6 +279,9 @@ nav {
   .read-more {
     text-transform: uppercase;
     font-size: 15px;
+    color: #7f7f7f;
+    font-family: $headerFont;
+    text-decoration: underline;
   }
 }
 

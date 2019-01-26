@@ -1,18 +1,48 @@
 
 pre.highlight {
-  background-color: #efefef;
+  background-color: #222222;
   padding: 7px 7px 7px 10px;
   border: 1px solid #ddd;
-  -moz-box-shadow: 3px 3px rgba(0,0,0,0.1);
-  -webkit-box-shadow: 3px 3px rgba(0,0,0,0.1);
-  box-shadow: 3px 3px rgba(0,0,0,0.1);
+  border-radius: 4px;
   margin: 20px 0 20px 0;
-  overflow: scroll;
-  font-size: 80%;
+  overflow: auto;
+  font-size: 1rem;
+  font-variant-numeric: initial;
+
+  // scrollbar hover effect
+  color: transparent;
+  transition: color 0.25s ease-out;
+	&:hover {
+		color: #7f7f7f;
+	}
+}
+pre.highlight::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+pre.highlight::-webkit-scrollbar {
+	width: 14px;
+}
+pre.highlight::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 0 10px;
+  border-radius: 3px;
 }
 
 code {
-  font-family:'Bitstream Vera Sans Mono','Courier', monospace;
+  color: #eeeeee;
+  font-family: Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,sans-serif;
+  font-size: 87.5%;
+  &::selection, ::selection {
+    color: inherit;
+    background-color: #5a87a7;
+  }
+}
+code.highlighter-rouge {
+  background-color: #e3e3e3;
+  display: inline-block;
+  padding: 0 4px;
+  border-radius: 4px;
+  color: $accent1;
 }
 
 .highlight .c { color: #586E75 } /* Comment */
