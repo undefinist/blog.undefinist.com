@@ -127,8 +127,17 @@ img {
 }
 
 .date {
+  padding-top: 1rem;
   font-style: italic;
   color: $gray;
+}
+h1 .date {
+  padding-top: unset;
+  color: #7f7f7f;
+  font-family: minion-3;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: -0.5rem;
 }
 
 // Specify the color of the selection
@@ -253,8 +262,25 @@ nav {
 //
 
 .posts > .post {
-  padding-bottom: 2em;
+  padding-bottom: 1rem;
   border-bottom: 1px solid $lightGray;
+  position: relative;
+
+  > h1 > a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  > .entry > :last-child::after {
+    content: "[...]";
+    display: inline-block;
+    margin-left: 0.1rem;
+    color: #7f7f7f;
+  }
 }
 
 .posts > .post:last-child {
@@ -276,13 +302,12 @@ nav {
     margin-top: 10px;
   }
 
-  .read-more {
-    text-transform: uppercase;
-    font-size: 15px;
-    color: #7f7f7f;
-    font-family: $headerFont;
-    text-decoration: underline;
-  }
+  // .read-more {
+  //   text-transform: uppercase;
+  //   font-size: 15px;
+  //   color: #7f7f7f;
+  //   font-family: $headerFont;
+  // }
 }
 
 .wrapper-footer {
