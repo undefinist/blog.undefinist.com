@@ -7,6 +7,8 @@ excerpt_separator: <!--more-->
 Suppose you have an enum, and you'd like to easily convert it to a string. Presently, it's not possible to do so (until the new Reflection feature, at least).
 <!--more-->
 
+The following solution is adapted for c++17 from a [StackOverflow answer](https://stackoverflow.com/questions/28828957/enum-to-string-in-modern-c11-c14-c17-and-future-c20).
+
 ```cpp
 enum class Anchor : char
 {
@@ -29,8 +31,6 @@ const char* to_string(Anchor anchor)
 ```
 
 Maybe for a few enumerations, it's fine. But as the list starts getting bigger, it starts to get out of hand. And if you add a new enumeration, you may forget to update the other list. So, the obvious solution is a macro.
-
-This post is adapted for c++17 from a [StackOverflow answer](https://stackoverflow.com/questions/28828957/enum-to-string-in-modern-c11-c14-c17-and-future-c20).
 
 ## Blessed Preprocessors
 
