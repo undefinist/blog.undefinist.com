@@ -7,7 +7,7 @@ excerpt_separator: <!--more-->
 Suppose you have an enum, and you'd like to easily convert it to a string. Presently, it's not possible to do so (until the new Reflection feature, at least).
 <!--more-->
 
-The following solution is adapted for c++17 from a [StackOverflow answer](https://stackoverflow.com/questions/28828957/enum-to-string-in-modern-c11-c14-c17-and-future-c20).
+The following is a solution that's adapted for c++17 from a [StackOverflow answer](https://stackoverflow.com/questions/28828957/enum-to-string-in-modern-c11-c14-c17-and-future-c20).
 
 ```cpp
 enum class Anchor : char
