@@ -19,9 +19,9 @@ html {
 
 body {
 	background: #f3f3f3;
-  font: 1.5rem $bodyFont;
+  font: 1.25rem $bodyFont;
   color: $darkGray;
-  line-height: 1.4;
+  line-height: 1.5;
   font-variant-numeric: oldstyle-nums;
 }
 
@@ -37,8 +37,8 @@ h1, h2, h3, h4, h5, h6 {
   color: $accent1;
   font-weight: 900;
 
-  line-height: 1.7;
-  margin: 1em 0 15px;
+  line-height: 1.5;
+  margin: 1.25rem 0 0;
   padding: 0;
 
   @include mobile {
@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 1.875rem;
   a {
     color: inherit;
     transition: color 0.25s ease-out;
@@ -58,11 +58,13 @@ h1 {
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 400;
 }
 
 h4 {
@@ -71,19 +73,21 @@ h4 {
 }
 
 a {
-  color: $accent2;
+  color: #1f7d66;
   cursor: pointer;
   text-decoration: none;
 }
 
 p {
-  margin: 15px 0;
+  margin: 12px 0;
   a {
     text-decoration: underline;
-    transition: transform 0.25s ease-out;
+    text-decoration-color: $accent2;
+    transition: transform 0.25s ease-out, text-decoration-color 0.25s ease-out;
     display: inline-block;
     &:hover, &:active {
-      transform: translate(0, -0.5rem);
+      text-decoration-color: #1f7d66;
+      transform: translate(0, -0.25rem);
     }
   }
 }
@@ -184,7 +188,7 @@ h1 .date {
 }
 
 .site-avatar {
-  float: left;
+  float: right;
   width: 70px;
   height: 70px;
   margin-right: 15px;
@@ -201,7 +205,8 @@ h1 .date {
 }
 
 .site-info {
-  float: left;
+  float: right;
+  text-align: right;
 
   @include mobile {
     float: none;
@@ -231,7 +236,7 @@ h1 .date {
 }
 
 nav {
-  float: right;
+  float: left;
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: $headerFont;
   font-size: 18px;
@@ -244,7 +249,7 @@ nav {
   }
 
   a {
-    margin-left: 20px;
+    margin-right: 20px;
     color: $darkGray;
     text-align: right;
     font-weight: 300;
@@ -252,7 +257,6 @@ nav {
 
     @include mobile {
       margin: 0 10px;
-      color: $blue;
     }
   }
 }
@@ -320,6 +324,17 @@ nav {
 footer {
   padding: 20px 0;
   text-align: center;
+}
+footer a {
+  text-decoration: underline;
+  color: $accent2;
+  margin: 0 4px;
+  display: inline-block;
+
+  transition: transform 0.25s ease-out;
+  &:hover, &:active {
+    transform: translate(0, -0.25rem);
+  }
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
