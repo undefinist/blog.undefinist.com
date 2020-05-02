@@ -23,6 +23,9 @@ body {
   color: $darkGray;
   line-height: 1.5;
   font-variant-numeric: oldstyle-nums;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .container {
@@ -68,12 +71,16 @@ h3 {
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: $gray;
 }
 
+small {
+  font-size: 1rem;
+}
+
 a {
-  color: #1f7d66;
+  color: $accent2;
   cursor: pointer;
   text-decoration: none;
 }
@@ -83,10 +90,11 @@ p {
   a {
     text-decoration: underline;
     text-decoration-color: $accent2;
-    transition: transform 0.25s ease-out, text-decoration-color 0.25s ease-out;
+    transition: transform 0.25s ease-out, text-decoration-color 0.25s ease-out, color 0.25s ease-out;
     display: inline-block;
     &:hover, &:active {
-      text-decoration-color: #1f7d66;
+      text-decoration-color: $blue;
+      color: $blue;
       transform: translate(0, -0.25rem);
     }
   }
@@ -175,7 +183,7 @@ h1 .date {
 //
 
 .wrapper-masthead {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .masthead {
@@ -264,6 +272,9 @@ nav {
 //
 // .main
 //
+#main {
+  flex: 1;
+}
 
 .posts > .post {
   padding-bottom: 1rem;
@@ -293,6 +304,7 @@ nav {
 }
 
 .post {
+
   blockquote {
     margin: 1.8em .8em;
     border-left: 2px solid $gray;
@@ -312,10 +324,37 @@ nav {
   //   color: #7f7f7f;
   //   font-family: $headerFont;
   // }
+
+  .page-nav {
+    font-size: 1rem;
+    display: block;
+    width: auto;
+    overflow: hidden;
+    border-top: 1px solid $lightGray;
+    border-bottom: 1px solid $lightGray;
+    padding: 10px 0;
+    margin-top: 1.5rem;
+  }
+  
+  .page-nav a {
+    display: block;
+    width: 50%;
+    float: left;
+    margin: 1em 0;
+    transition: color 0.25s ease-out;
+    &:hover, &:active {
+      text-decoration: underline;
+      color: $blue;
+    }
+  }
+  
+  .page-nav .next {
+    text-align: right;
+  }
 }
 
 .wrapper-footer {
-  margin-top: 50px;
+  margin-top: 1.5rem;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: $lightGray;
@@ -323,18 +362,21 @@ nav {
 
 footer {
   padding: 20px 0;
-  text-align: center;
+  text-align: right;
 }
 footer a {
   text-decoration: underline;
   color: $accent2;
-  margin: 0 4px;
   display: inline-block;
 
-  transition: transform 0.25s ease-out;
+  transition: color 0.25s ease-out;
   &:hover, &:active {
-    transform: translate(0, -0.25rem);
+    color: $blue;
   }
+}
+footer small {
+  float: left;
+  line-height: 2rem;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS

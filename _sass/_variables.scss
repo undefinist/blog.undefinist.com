@@ -4,14 +4,14 @@
 //
 
 // Colors
-$blue: #4183C4;
+$blue: #13a2e4;
 
 // Grays
 $black: #000;
 $darkerGray: #222;
 $darkGray: #333;
 $gray: #666;
-$lightGray: #eee;
+$lightGray: #e7e7e7;
 $white: #fff;
 
 // Font stacks
@@ -19,7 +19,7 @@ $headerFont: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $bodyFont: minion-3, Georgia, serif;
 
 $accent1: #FFA69E;
-$accent2: #84DCC6;
+$accent2: #6dc4ae;
 
 // Mobile breakpoints
 @mixin mobile {
