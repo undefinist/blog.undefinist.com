@@ -52,8 +52,8 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 1.875rem;
   a {
+    text-decoration: none;
     color: inherit;
-    transition: color 0.25s ease-out;
     &:hover, &:active {
       color: $accent2;
     }
@@ -82,19 +82,18 @@ small {
 a {
   color: $accent2;
   cursor: pointer;
-  text-decoration: none;
+  transition: color 0.25s ease-out;
+  &:hover, &:active {
+    color: $blue;
+  }
 }
 
 p {
   margin: 12px 0;
   a {
-    text-decoration: underline;
-    text-decoration-color: $accent2;
-    transition: transform 0.25s ease-out, text-decoration-color 0.25s ease-out, color 0.25s ease-out;
+    transition: transform 0.25s ease-out, color 0.25s ease-out;
     display: inline-block;
     &:hover, &:active {
-      text-decoration-color: $blue;
-      color: $blue;
       transform: translate(0, -0.25rem);
     }
   }
@@ -111,6 +110,21 @@ ul {
 
 ol {
   list-style-type: decimal;
+  ol {
+    list-style-type: lower-alpha;
+    ol {
+      list-style-type: lower-roman;
+      ol {
+        list-style-type: decimal;
+        ol {
+          list-style-type: lower-alpha;
+          ol {
+            list-style-type: lower-roman;
+          }
+        }
+      }
+    }
+  }
 }
 
 ol ul, ul ol, ul ul, ol ol {
@@ -131,6 +145,24 @@ strong, b {
 
 img {
   max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
+figure {
+  text-align: center;
+  margin: 12px 0;
+  img {
+    display: block;
+    margin: auto;
+  }
+}
+figcaption {
+  line-height: 1.25;
+  margin-top: 4px;
+  font-style: italic;
+  font-size: 1rem;
+  color: $gray;
 }
 
 // Fixes images in popup boxes from Google Translate
@@ -338,18 +370,12 @@ nav {
   
   .page-nav a {
     display: block;
-    width: 50%;
     float: left;
     margin: 1em 0;
-    transition: color 0.25s ease-out;
-    &:hover, &:active {
-      text-decoration: underline;
-      color: $blue;
-    }
   }
   
   .page-nav .next {
-    text-align: right;
+    float: right;
   }
 }
 
@@ -368,15 +394,10 @@ footer a {
   text-decoration: underline;
   color: $accent2;
   display: inline-block;
-
-  transition: color 0.25s ease-out;
-  &:hover, &:active {
-    color: $blue;
-  }
 }
 footer small {
   float: left;
-  line-height: 2rem;
+  line-height: 2.25rem;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
