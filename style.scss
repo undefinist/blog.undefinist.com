@@ -18,11 +18,11 @@ html {
 }
 
 body {
-	background: #f3f3f3;
+  background: #f3f3f3;
   font: 1.25rem $bodyFont;
   color: $darkGray;
   line-height: 1.5;
-  font-variant-numeric: oldstyle-nums;
+  //font-variant-numeric: oldstyle-nums;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 1.875rem;
+  font-size: 2rem;
   a {
     text-decoration: none;
     color: inherit;
@@ -59,20 +59,17 @@ h1 {
     }
   }
 }
-
 h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
+	font-size: 1.625rem;
+	font-weight: 700;
 }
-
 h3 {
-  font-size: 1.25rem;
-  font-weight: 400;
+	font-size: 1.5rem;
+	font-weight: 500;
 }
-
 h4 {
-  font-size: 1.125rem;
-  color: $gray;
+	font-size: 1.25rem;
+	font-style: italic;
 }
 
 small {
@@ -143,7 +140,7 @@ strong, b {
   font-weight: bold;
 }
 
-img {
+img, video {
   max-width: 100%;
   display: block;
   margin: auto;
@@ -186,12 +183,12 @@ h1 .date {
 
 // Specify the color of the selection
 ::-moz-selection {
-  color: $accent1;
-  background: $lightGray;
+  color: white;
+  background-color: $accent2;
 }
 ::selection {
-  color: $accent1;
-  background: $lightGray;
+  color: white;
+  background-color: $accent2;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -346,18 +343,7 @@ nav {
     font-style: italic;
   }
 
-  .comments {
-    margin-top: 10px;
-  }
-
-  // .read-more {
-  //   text-transform: uppercase;
-  //   font-size: 15px;
-  //   color: #7f7f7f;
-  //   font-family: $headerFont;
-  // }
-
-  .page-nav {
+  #page-nav {
     font-size: 1rem;
     display: block;
     width: auto;
@@ -366,16 +352,15 @@ nav {
     border-bottom: 1px solid $lightGray;
     padding: 10px 0;
     margin-top: 1.5rem;
-  }
-  
-  .page-nav a {
-    display: block;
-    float: left;
-    margin: 1em 0;
-  }
-  
-  .page-nav .next {
-    float: right;
+    
+    a {
+      display: block;
+      float: left;
+      margin: 1em 0;
+    }
+    .next {
+      float: right;
+    }
   }
 }
 
@@ -398,6 +383,57 @@ footer a {
 footer small {
   float: left;
   line-height: 2.25rem;
+}
+
+#toc {
+  width: 230px;
+  position: sticky;
+  float: left;
+  top: 40px;
+  margin-left: -270px;
+  display: none;
+  @media (min-width: 740+290+290px) {
+    display: block;
+  }
+}
+#toc-inline {
+  display: block;
+  @media (min-width: 740+290+290px) {
+    display: none;
+  }
+}
+#toc-inline, #toc {
+  line-height: 1.2;
+  font-size: 1rem;
+
+  summary, h1 {
+    font-family: $headerFont;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $gray;
+  }
+  a {
+    color: #999;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+    &.active {
+      color: $darkGray;
+      font-weight: 600;
+    }
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 20px;
+    li {
+      margin: 4px 0;
+    }
+  }
+  > ul {
+    padding-left: 0;
+    margin: 10px 0;
+  }
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS

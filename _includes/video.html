@@ -1,0 +1,13 @@
+{% capture videoPath %}{{ page.date | date: "%Y-%m-%d" }}-{{ page.slug }}/{{ include.name }}{% endcapture %}
+{% if include.caption %}
+  <figure>
+    <video {% if include.autoplay %} autoplay {% endif %} {% if include.loop %} loop {% endif %} {% if include.controls %} controls {% endif %} {% if include.muted %} muted {% endif %}
+      src="/assets/posts/{{ videoPath }}" >
+    </video>
+    <figcaption>{{ include.caption }}</figcaption>
+  </figure>
+{% else %}
+  <video {% if include.autoplay %} autoplay {% endif %} {% if include.loop %} loop {% endif %} {% if include.controls %} controls {% endif %} {% if include.muted %} muted {% endif %}
+    src="/assets/posts/{{ videoPath }}" >
+  </video>
+{% endif %}

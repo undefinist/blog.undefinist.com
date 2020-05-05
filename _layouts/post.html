@@ -3,16 +3,36 @@ layout: default
 ---
 
 <article class="post">
+
+  {% if page.show_toc %}
+    {% capture page_toc %}
+      {% include toc.html html=content %}
+    {% endcapture %}
+    {% assign page_toc = page_toc | strip %}
+    <aside id="toc">
+      <h1>Table of Contents</h1>
+      {{ page_toc }}
+      <ul><li><a href="#comments">Comments</a></li></ul>
+    </aside>
+    {% capture page_toc %}
+      <details id="toc-inline">
+        <summary>Table of Contents</summary>
+        {{ page_toc }}
+        <ul><li><a href="#comments">Comments</a></li></ul>
+      </details>
+    {% endcapture %}
+  {% endif %}
+
   <h1>
     {{ page.title }}
     <div class="date">{{ page.date | date: "%B %e, %Y" }}</div>
   </h1>
 
   <div class="entry">
-    {{ content | replace: '#define', '<span class="cp">#define</span>' | replace: '<span class="cp"><span class="cp">#define', '<span class="cp">#define' }}
+    {{ content | replace: '#define', '<span class="cp">#define</span>' | replace: '<span class="cp"><span class="cp">#define', '<span class="cp">#define' | replace: page.show_toc, page_toc }}
   </div>
 
-  <div class="page-nav">
+  <div id="page-nav">
     {% if page.previous.url %}
       <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
     {% endif %}
@@ -21,8 +41,8 @@ layout: default
     {% endif %}
   </div>
 
-  <div class="comments">
-    <h2>Comments</h2>
+  <div>
+    <h2 id="comments">Comments</h2>
     <script src="https://utteranc.es/client.js"
       repo="undefinist/blog.undefinist.com"
       issue-term="pathname"
@@ -32,4 +52,8 @@ layout: default
       async>
     </script>
   </div>
+
+  {% if page.show_toc %}
+    <script src="{{ site.baseurl }}/toc.js"></script>
+  {% endif %}
 </article>

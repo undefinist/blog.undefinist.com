@@ -52,7 +52,7 @@ code {
   font-variant-numeric: initial;
   &::selection, ::selection {
     color: inherit;
-    background-color: $base01;
+    background-color: $lightGray;
   }
 }
 code.highlighter-rouge {
@@ -62,8 +62,8 @@ code.highlighter-rouge {
   border-radius: 4px;
   box-shadow: 0 0 0px 1px #dddddd;
   &::selection, ::selection {
-    color: $accent1;
-    background-color: $lightGray;
+    color: white;
+    background-color: $accent2;
   }
 }
 
