@@ -124,7 +124,7 @@ let output = resolve_node(master_node)
 
 Before I delve deeper I want to explain a little about the design choices.
 The entire shader graph is done in a data-oriented fashion. The graph simply holds
-data on the nodes and links, the Material Editor creates and modifies the graph,
+data on the nodes and links, the Shader Graph editor creates and modifies the graph,
 and the Shader Graph Compiler takes in the data and spits out a fragment.
 
 ### Node Format
