@@ -25,6 +25,10 @@ which makes creating new materials a lot easier. And so when we embarked on our 
 project, it was one of the first features I wanted to add to our custom engine/editor,
 and one of the first features I prototyped independently.
 
+Here's a little snippet of the shader graph in our engine, showing off a fake water material used for a level:
+
+{% include video.html name="watermat.webm" loop=true autoplay=true muted=true %}
+
 ### Constraints
 
 Writing a shader graph is hard. For one, there is a distinct lack of examples and resources on the web.
@@ -331,9 +335,5 @@ Thank you for reading this article, and I hope it was helpful to you.
 Writing a shader graph had actually been a lot of fun for me, and there's
 quite a lot of detail I've omitted to keep this article short and concise.
 However for those wanting or starting to write one, I *hope* that this is at least a good start!
-
-To celebrate here's a little fake water material made for one of the levels:
-
-{% include video.html name="watermat.webm" loop=true autoplay=true muted=true %}
 
 If there's any topic you've felt I missed, or any questions or feedback, feel free to comment.
