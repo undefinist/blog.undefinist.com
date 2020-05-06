@@ -3,10 +3,11 @@ layout: post
 title: Writing a Shader Graph
 excerpt_separator: <!--more-->
 show_toc: <!--toc-->
+image: preview.png
 ---
 
-Recently I wrote a shader graph / material editor for 
-[Hyde & Seek](https://www.undefinist.com/hydeandseek), 
+Recently I wrote a shader graph / material editor for
+[Hyde & Seek](https://www.undefinist.com/hydeandseek),
 a 30-week-long game project built in a custom engine using C++.
 <!--more-->
 <!--toc-->
