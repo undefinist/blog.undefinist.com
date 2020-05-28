@@ -27,7 +27,7 @@ window.onload = function() {
 
         for(let i = 0; i < sections.length; ++i)
         {
-            if (scrollPosition < sections[i].offsetTop)
+            if (scrollPosition < sections[i].offsetTop - 1)
             {
                 if (currSection != i - 1)
                     setActiveSection(i - 1);
