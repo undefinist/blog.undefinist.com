@@ -47,7 +47,7 @@ pre.highlight::-webkit-scrollbar-thumb {
 code {
   background-color: $base00;
   color: $base0d;
-  font-family: Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,sans-serif;
+  font-family: source-code-pro,Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,sans-serif;
   font-size: 0.875rem;
   font-variant-numeric: initial;
   &::selection, ::selection {
